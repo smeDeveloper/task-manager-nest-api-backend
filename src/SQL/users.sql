@@ -1,0 +1,6 @@
+CREATE TABLE users (
+    id VARCHAR(100) PRIMARY KEY, 
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL, 
+    password VARCHAR(100) NOT NULL
+) ENGINE=INNODB;
