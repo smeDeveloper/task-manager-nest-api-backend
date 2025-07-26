@@ -13,8 +13,8 @@ export class TaskDTO {
     @IsOptional() @IsString() 
     description?: string;
 
-    @IsOptional() @IsNumber() 
-    endDate?: string;
+    @IsOptional() @IsString() 
+    createdAt?: string;
 
     @IsOptional() @IsString()  @IsIn(["Low" , "Medium" , "High"])
     priority?: string;

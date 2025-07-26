@@ -1,6 +1,7 @@
-import { IsEmail, IsString, Length } from "class-validator";
+import { IsEmail, IsOptional, IsString, IsUUID, Length } from "class-validator";
 
 export class UserDTO {
+    @IsOptional() @IsUUID()
     id?: string;
 
     @IsString() @Length(5 , 50)

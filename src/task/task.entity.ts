@@ -13,7 +13,7 @@ export class TaskEntity {
     @Column({type: "text", nullable: true,})
     description: string;
 
-    @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })    
+    @Column({ type: "varchar" , length: 15, })    
     createdAt: string ;
 
     @Column({type: "enum",enum:["Low" , "Medium" , "High"],})

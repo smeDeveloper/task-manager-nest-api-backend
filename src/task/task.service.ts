@@ -27,7 +27,8 @@ export class TaskService {
 
     async addNewTask(data: TaskDTO): Promise<object> {
         await this.tasksRepo.save({ ...data, user: { id: data.user, }, });
-        return { msg: "Task has been saved in the database.", };
+        const task = await this.tasksRepo.findOne({where: {title: data.title , createdAt: data.createdAt, user: {id: data.user,},}, relations: ["user"],}) || {id: null};
+        return { msg: "Task has been saved in the database." , id: task.id, };
     }
 
     async updateTask(data: UpdateTaskDTO): Promise<object> {
